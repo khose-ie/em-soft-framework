@@ -151,5 +151,10 @@ Objects/
 #
 docs/doxygen
 
+#
+# macOS shuts
+#
+.DS_Store
+
 !.gitignore
 !.gitattributes
