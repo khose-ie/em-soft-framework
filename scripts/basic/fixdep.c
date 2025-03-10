@@ -336,6 +336,7 @@ static void parse_dep_file(void *map, size_t len)
 	int is_target;
 	int saw_any_target = 0;
 	int is_first_dep = 0;
+	int is_first_one = 1;
 
 	while (m < end) {
 		/* Skip any "white space" */
@@ -347,6 +348,13 @@ static void parse_dep_file(void *map, size_t len)
 			p++;
 		/* Is the token we found a target name? */
 		is_target = (*(p-1) == ':');
+
+		if (is_first_one)
+		{
+			is_target = 1;
+			is_first_one = 0;
+		}
+
 		/* Don't write any target names into the dependency file */
 		if (is_target) {
 			/* The /next/ file is the first dependency */
@@ -355,6 +363,10 @@ static void parse_dep_file(void *map, size_t len)
 			/* Save this token/filename */
 			memcpy(s, m, p-m);
 			s[p - m] = 0;
+
+			if (!strrcmp(s, "c++m")) {
+				break;
+			}
 
 			/* Ignore certain dependencies */
 			if (strrcmp(s, "include/generated/autoconf.h") &&
