@@ -1,4 +1,8 @@
+Language: Cpp
+BasedOnStyle: llvm
+
 AccessModifierOffset: -4
+
 AlignAfterOpenBracket: Align
 AlignArrayOfStructures: Left
 
@@ -19,13 +23,12 @@ AllowAllArgumentsOnNextLine: false
 AllowAllParametersOfDeclarationOnNextLine: true
 AllowShortBlocksOnASingleLine: true
 AllowShortEnumsOnASingleLine: false
-AllowShortFunctionsOnASingleLine: Empty
-AllowShortIfStatementsOnASingleLine: Never
+AllowShortFunctionsOnASingleLine: true
+AllowShortIfStatementsOnASingleLine: true
 AllowShortLoopsOnASingleLine: true
 
 AlwaysBreakAfterReturnType: None
-
-BasedOnStyle: llvm
+AlwaysBreakTemplateDeclarations: true
 
 BinPackArguments: true
 BinPackParameters: true
@@ -57,8 +60,6 @@ IncludeBlocks: Preserve
 IndentCaseBlocks: false
 IndentCaseLabels: false
 IndentWidth: 4
-
-Language: Cpp
 
 NamespaceIndentation: All
 

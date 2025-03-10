@@ -5,6 +5,9 @@
         ".doxyfile": "ini",
         "*.h": "c",
         "*.hpp": "cpp",
-        "Kconfig": "makefile"
+        "Kconfig": "makefile",
+        "kconfig-platform": "makefile",
+        "makefile-platform": "makefile",
+        "makefile-platform.*": "makefile"
     }
 }
